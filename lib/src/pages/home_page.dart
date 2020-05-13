@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget{
 
-@override
+final estiloTexto = new TextStyle(fontSize: 25);
 
+
+@override
 Widget build(BuildContext context) {
 
   return Scaffold(
@@ -13,7 +15,14 @@ Widget build(BuildContext context) {
       elevation: 20,
     ),
     body: Center(
-      child: Text('Hola Mundo')
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+            Text('HOLA LICHIS!!!!: ', style: estiloTexto),
+            Text('0',style: estiloTexto)
+              ],
+            )
+      // la mayoria de los Widgets solo pueden tener un child
       ),
   );
 }
