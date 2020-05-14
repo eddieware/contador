@@ -18,11 +18,20 @@ Widget build(BuildContext context) {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-            Text('HOLA LICHIS!!!!: ', style: estiloTexto),
+            Text('Numero de Clicks!!!! ', style: estiloTexto),
             Text('0',style: estiloTexto)
               ],
             )
       // la mayoria de los Widgets solo pueden tener un child
+      ),
+      floatingActionButton: FloatingActionButton(
+
+        child: Icon(Icons.add),
+
+        onPressed: () {
+          print('Hola Mundo!');
+        }, //:null,// hace disable el boton
+
       ),
   );
 }
