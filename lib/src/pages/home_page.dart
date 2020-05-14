@@ -4,6 +4,7 @@ class HomePage extends StatelessWidget{
 
 final estiloTexto = new TextStyle(fontSize: 25);
 
+final conteo =10;
 
 @override
 Widget build(BuildContext context) {
@@ -19,11 +20,13 @@ Widget build(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
             Text('Numero de Clicks!!!! ', style: estiloTexto),
-            Text('0',style: estiloTexto)
+            Text('$conteo',style: estiloTexto) //$ interpolacion string
               ],
             )
       // la mayoria de los Widgets solo pueden tener un child
       ),
+
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
 
         child: Icon(Icons.add),
