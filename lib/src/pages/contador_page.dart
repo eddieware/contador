@@ -42,25 +42,22 @@ Widget build(BuildContext context) {
       ),
 
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: _crearBotones()
+  );
+}
+Widget _crearBotones(){
 
-        child: Icon(Icons.add),
+  return Row(
 
-        onPressed: () {
-          //print('Hola Mundo!!!!!');
-          
-
-          //codigo para la renderizacion de la pantalla
-          setState(()//parentesis para recibir funcion 
-          {
-            _conteo++;
-          }//cuerpo de la funcion anonima
-          );
-
-
-        }, //:null,// hace disable el boton
-
-      ),
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: <Widget>[
+      SizedBox(width: 30),
+      FloatingActionButton(onPressed: null,child: Icon(Icons.exposure_zero)),
+      Expanded(child: SizedBox()),
+      FloatingActionButton(onPressed: null,child: Icon(Icons.remove)),
+      SizedBox(width: 5.0),
+      FloatingActionButton(onPressed: null,child: Icon(Icons.add))
+      ],
   );
 }
 
