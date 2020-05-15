@@ -3,16 +3,12 @@ import 'package:flutter/material.dart';
 
 
 class ContadorPage extends StatefulWidget{
-
- 
 //EL OVERRIDE es porque el statueful 
 //widget tiene un aimplementacion interna 
 //del createstate por ende se sobreescribe
 @override 
 createState()=> _ContadorPageState();
   //necesita retornar una nueva instancia _ContadorPageState();
-  
-
 }
 
 class _ContadorPageState extends State<ContadorPage>{ 
@@ -40,26 +36,40 @@ Widget build(BuildContext context) {
             )
       // la mayoria de los Widgets solo pueden tener un child
       ),
-
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: _crearBotones()
   );
 }
+
+
 Widget _crearBotones(){
 
   return Row(
-
     mainAxisAlignment: MainAxisAlignment.end,
     children: <Widget>[
       SizedBox(width: 30),
-      FloatingActionButton(onPressed: null,child: Icon(Icons.exposure_zero)),
+      FloatingActionButton(child: Icon(Icons.exposure_zero), onPressed: _reset),
       Expanded(child: SizedBox()),
-      FloatingActionButton(onPressed: null,child: Icon(Icons.remove)),
+      FloatingActionButton(child: Icon(Icons.remove),onPressed: _sustraer),
       SizedBox(width: 5.0),
-      FloatingActionButton(onPressed: null,child: Icon(Icons.add))
+      FloatingActionButton(child: Icon(Icons.add), onPressed: _agregar ) // no lleva parenteisis la funcion ya que si no se ejecutaria en el momento en el eque se crea
+
       ],
   );
 }
+void _agregar(){
+  _conteo++;
+  setState(()=> _conteo );
+}
 
+void _sustraer(){
+_conteo--;
+  setState(()=> _conteo );
 
+}
+
+void _reset(){
+  _conteo=0;
+  setState(()=> _conteo);
+}
 }
